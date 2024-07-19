@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberVault KIIT Hero Section</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .hero-bg {
+      background-image: url('cs.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.8; /* Adjust opacity here */
+    }
+  </style>
+</head>
+<body class="bg-gray-700 text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 p-4">
+    <div class="container mx-auto flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href="#">
+          <img src="lg.png" alt="Logo" class="h-15 w-20">
+        </a>
+      </div>
+      <!-- Links -->
+      <div class="hidden md:flex space-x-8">
+        <a href="#" class="text-white hover:text-teal-500">Home</a>
+        <a href="#" class="text-white hover:text-teal-500">About Us</a>
+        <a href="#" class="text-white hover:text-teal-500">Contact Us</a>
+      </div>
+      <!-- Register Button -->
+      <div>
+        <a href="#" class="inline-block px-8 py-2 border text-base font-medium rounded-md text-white bg-transparent hover:bg-green-600 transition-colors duration-300">Join Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-bg relative h-screen flex items-center justify-center">
+    <div class="absolute inset-0 bg-black opacity-60"></div> <!-- To darken the background -->
+    <div class="relative text-center px-4 sm:px-6 lg:px-8 z-10">
+      <h1 class="text-4xl sm:text-6xl font-bold mb-4">CyberVault KIIT</h1>
+      <p class="text-lg sm:text-2xl mb-6">Hey Hackers! We’re a student run society who share the mindset of educating the world about cyber.<br> Take the leap and prepare yourself for the future.</p>
+      <a href="#" class="inline-block px-8 py-3 border text-base font-medium rounded-md text-white bg-transparent hover:bg-green-600 transition-colors duration-300">Join Us</a>
+    </div>
+  </section>
+
+
+   <!-- About Us Section -->
+   <section class="bg-gray-900 py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center">
+      <!-- Photo -->
+      <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <img src="cs.png" alt="About Us Photo" class="rounded-lg shadow-lg">
+      </div>
+      <!-- Text Content -->
+      <div class="w-full lg:w-1/2 lg:pl-12">
+        <h3 class="text-2xl font-bold mb-4">We’re a University Information Security Society.</h3>
+        <p class="mb-6">The UTS Cyber Security Society strives to promote cyber security at the University of Technology Sydney. Whether you’re a student, industry professional, or someone in another field - we want to build a culture that makes us the leading hub of cyber security skills development. You could be a part of that.</p>
+        <!-- Table-like Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Column 1 -->
+          <div class="flex items-start">
+            <svg class="h-6 w-6 text-teal-500 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"/></svg>
+            <div>
+              <h4 class="text-xl font-bold mb-2">You don’t have to be studying an IT degree</h4>
+              <p>We don’t believe in limiting ourselves to one discipline. With the modern reach of technology, cyber security literacy should be in every person’s toolbox.</p>
+            </div>
+          </div>
+          <!-- Column 2 -->
+          <div class="flex items-start">
+            <svg class="h-6 w-6 text-teal-500 mr-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0ZM12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22ZM11 7H13V13H11V7ZM11 15H13V17H11V15Z"/></svg>
+            <div>
+              <h4 class="text-xl font-bold mb-2">Our members share knowledge</h4>
+              <p>Our members are those who want to protect themselves, want to learn how hackers think, and want to know the difference between something which is secure and which is not.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-700 text-white min-h-screen flex flex-col">
+    <div class="flex-grow flex flex-col items-center pt-8 px-4">
+        <h1 class="text-3xl font-bold mb-1 text-center">Contact us</h1>
+        <p class="text-center mb-12">We'd love to talk about how we can help you.</p>
+        
+        <section class="w-full max-w-4xl">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="bg-slate-600 p-8 rounded-lg shadow-lg flex-1">
+                    <h2 class="text-xl font-semibold mb-4">Fill in the form</h2>
+                    <form>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <input type="text" placeholder="First Name" class="p-2 rounded bg-slate-700 text-white">
+                            <input type="text" placeholder="Last Name" class="p-2 rounded bg-slate-700 text-white">
+                        </div>
+                        <input type="email" placeholder="Email" class="p-2 rounded bg-slate-700 text-white w-full mb-4">
+                        <input type="tel" placeholder="Phone Number" class="p-2 rounded bg-slate-700 text-white w-full mb-4">
+                        <textarea placeholder="Details" rows="4" class="p-2 rounded bg-slate-700 text-white w-full mb-4"></textarea>
+                        <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600">Send inquiry</button>
+                    </form>
+                    <p class="text-sm mt-2 text-center">We'll get back to you in 1-2 business days.</p>
+                </div>
+                
+                <div class="space-y-6 flex-1">
+                    <div class="pb-6 border-b border-slate-500">
+                        <h3 class="flex items-center text-lg font-semibold mb-2">
+                            <i class="fas fa-book-open mr-2"></i> Knowledgebase
+                        </h3>
+                        <p class="text-sm">We're here to help with any questions or code.</p>
+                        <a href="#" class="text-blue-400 hover:underline text-sm">Contact support →</a>
+                    </div>
+                    
+                    <div class="pb-6 border-b border-slate-500">
+                        <h3 class="flex items-center text-lg font-semibold mb-2">
+                            <i class="fas fa-question-circle mr-2"></i> FAQ
+                        </h3>
+                        <p class="text-sm">Search our FAQ for answers to anything you might ask.</p>
+                        <a href="#" class="text-blue-400 hover:underline text-sm">Visit FAQ →</a>
+                    </div>
+                    
+                    <div class="pb-6 border-b border-slate-500">
+                        <h3 class="flex items-center text-lg font-semibold mb-2">
+                            <i class="fas fa-code mr-2"></i> Society FIC
+                        </h3>
+                        <p class="text-sm">Mr. Anonymous, Faculty of Computer Science</p>
+                        <a href="#" class="text-blue-400 hover:underline text-sm">Contact Through Mail →</a>
+                    </div>
+                    
+                    <div>
+                        <h3 class="flex items-center text-lg font-semibold mb-2">
+                            <i class="fas fa-envelope mr-2"></i> Contact us by email
+                        </h3>
+                        <p class="text-sm">If you wish to write us an email instead please use</p>
+                        <a href="mailto:cybervault.kiit@kiit.ac.in" class="text-blue-400 hover:underline text-sm">cybervault.kiit@kiit.ac.in</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="bg-slate-800 text-center py-2 -mt-18">
+      <p class="text-sm text-slate-400">&copy; 2024 Your Company Name. All rights reserved.</p>
+  </footer>
+  </section>
+
+  
+
+</body>
+</html>
