@@ -25,7 +25,7 @@
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href="#">
-          <img src="lg.png" alt="Logo" class="h-15 w-20">
+          <img src="lg.png" alt="Logo" class="h-19 w-20">
         </a>
       </div>
       <!-- Links -->
@@ -45,8 +45,8 @@
   <section class="hero-bg relative h-screen flex items-center justify-center" id="home">
     <div class="absolute inset-0 bg-black opacity-60"></div> <!-- To darken the background -->
     <div class="relative text-center px-4 sm:px-6 lg:px-8 z-10">
-      <h1 class="text-4xl sm:text-6xl font-bold mb-4">CyberVault KIIT</h1>
-      <p class="text-lg sm:text-2xl mb-6">Hey Hackers! We’re a student run society who share the mindset of educating the world about cyber.<br> Take the leap and prepare yourself for the future.</p>
+      <h1 class="text-4xl sm:text-6xl font-bold mb-4">CyberVault</h1>
+      <p class="text-lg sm:text-2xl mb-6">Hey Hackers! We’re a student run society of KIIT University who share the mindset of educating the world<br> about cyber. Take the leap and prepare yourself for the future.</p>
       <a href="#cnt" class="inline-block px-8 py-3 border text-base font-medium rounded-md text-white bg-transparent hover:bg-green-600 transition-colors duration-300">Join Us</a>
     </div>
   </section>
@@ -62,7 +62,7 @@
       <!-- Text Content -->
       <div class="w-full lg:w-1/2 lg:pl-12">
         <h3 class="text-2xl font-bold mb-4">We’re a University Information Security Society.</h3>
-        <p class="mb-6">CyberVault, the prestigious society for cybersecurity nestled within the esteemed School of Computer Science, beckons you to immerse yourself in the exhilarating realm of Cyber Defense. Whether your passion lies in the art of coding, the intriacies of network securities, the finesee ofenhancing user interfaces,or th aspiration to embar on a rewarding career, this society stands as a beacon of opportunity.</p>
+        <p class="mb-6">CyberVault, the prestigious society for cybersecurity nestled within the esteemed School of Computer Science, beckons you to immerse yourself in the exhilarating realm of Cyber Defense. Whether your passion lies in the art of coding, the intriacies of network securities, the finesee of enhancing user interfaces,or the aspiration to embark on a rewarding career, this society stands as a beacon of opportunity.</p>
         <!-- Table-like Layout -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <!-- Column 1 -->
@@ -95,14 +95,14 @@
             <div class="flex flex-col md:flex-row gap-8">
                 <div class="bg-slate-600 p-8 rounded-lg shadow-lg flex-1">
                     <h2 class="text-xl font-semibold mb-4">Fill in the form</h2>
-                    <form>
+                    <form id="contactForm">
                         <div class="grid grid-cols-2 gap-4 mb-4">
-                            <input type="text" placeholder="First Name" class="p-2 rounded bg-slate-700 text-white">
-                            <input type="text" placeholder="Last Name" class="p-2 rounded bg-slate-700 text-white">
+                            <input type="text" name="firstName" placeholder="First Name" class="p-2 rounded bg-slate-700 text-white" required>
+                            <input type="text" name="lastName" placeholder="Last Name" class="p-2 rounded bg-slate-700 text-white" required>
                         </div>
-                        <input type="email" placeholder="Email" class="p-2 rounded bg-slate-700 text-white w-full mb-4">
-                        <input type="tel" placeholder="Phone Number" class="p-2 rounded bg-slate-700 text-white w-full mb-4">
-                        <textarea placeholder="Details" rows="4" class="p-2 rounded bg-slate-700 text-white w-full mb-4"></textarea>
+                        <input type="email" name="email" placeholder="Email" class="p-2 rounded bg-slate-700 text-white w-full mb-4" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" class="p-2 rounded bg-slate-700 text-white w-full mb-4" required>
+                        <textarea name="details" placeholder="Details" rows="4" class="p-2 rounded bg-slate-700 text-white w-full mb-4" required></textarea>
                         <button type="submit" class="bg-blue-500 text-white p-2 rounded w-full hover:bg-blue-600">Send inquiry</button>
                     </form>
                     <p class="text-sm mt-2 text-center">We'll get back to you in 1-2 business days.</p>
@@ -149,7 +149,125 @@
   </footer>
   </section>
 
+
+
+<div id="customModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden">
+  <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+    <div class="mt-3 text-center">
+      <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-blue-100">
+        <svg id="modalIcon" class="h-6 w-6 text-blue-600 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+        </svg>
+      </div>
+      <h3 class="text-lg leading-6 font-medium text-gray-900 mt-4" id="modalTitle">Sending...</h3>
+      <div class="mt-2 px-7 py-3">
+        <p class="text-sm text-gray-500" id="modalMessage">
+          Please wait while we process your submission.
+        </p>
+      </div>
+      <div class="items-center px-4 py-3">
+        <button id="closeModal" class="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300 hidden">
+          Hooray!
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    const modal = document.getElementById('customModal');
+    const closeModal = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMessage = document.getElementById('modalMessage');
+    const modalIcon = document.getElementById('modalIcon');
   
+    if (!form) {
+      console.error('Form with id "contactForm" not found');
+      return;
+    }
+  
+    function showModal(title, message, status) {
+      modalTitle.textContent = title;
+      modalMessage.textContent = message;
+      
+      if (status === 'loading') {
+        modalIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>';
+        modalIcon.classList.add('animate-spin', 'text-blue-600');
+        modalIcon.parentElement.classList.add('bg-blue-100');
+        closeModal.classList.add('hidden');
+      } else if (status === 'success') {
+        modalIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>';
+        modalIcon.classList.remove('animate-spin', 'text-blue-600');
+        modalIcon.classList.add('text-green-600');
+        modalIcon.parentElement.classList.remove('bg-blue-100');
+        modalIcon.parentElement.classList.add('bg-green-100');
+        closeModal.classList.remove('hidden');
+      } else if (status === 'error') {
+        modalIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>';
+        modalIcon.classList.remove('animate-spin', 'text-blue-600');
+        modalIcon.classList.add('text-yellow-600');
+        modalIcon.parentElement.classList.remove('bg-blue-100');
+        modalIcon.parentElement.classList.add('bg-yellow-100');
+        closeModal.classList.remove('hidden');
+      }
+      
+      modal.classList.remove('hidden');
+    }
+  
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      console.log('Form submission intercepted');
+  
+      var data = {
+        firstName: form.firstName.value,
+        lastName: form.lastName.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        details: form.details.value
+      };
+  
+      console.log('Sending data:', data);
+  
+      // Show loading modal immediately
+      showModal('Sending...', 'Please wait while we process your submission.', 'loading');
+  
+      fetch('https://script.google.com/macros/s/AKfycbx7QKovmVrkpZdYZrjpznHr4PUIK9xQwwgcJcEAFYG4Ju9hPs4Is7CLZoTQUyHnshQX/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        redirect: 'follow',
+        body: JSON.stringify(data)
+      })
+      .then(() => {
+        console.log('Data sent successfully');
+        showModal('Success!', 'Thank you! Your message has been sent.', 'success');
+        form.reset();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        showModal('Oops!', 'Something went wrong. Please try again later.', 'error');
+      });
+    });
+  
+    closeModal.addEventListener('click', function() {
+      modal.classList.add('hidden');
+    });
+  
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.classList.add('hidden');
+      }
+    });
+  });
+</script>
+
+
+
 
 </body>
 </html>
